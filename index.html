@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/FronEnd/style.css">
+  <script src="/FronEnd/script.js" defer></script>
+  <title>Cadastro</title>
+</head>
+
+<body>
+
+  <nav class="nav-container">
+    <ul class="ul-container">
+      <li class="cadastro">Ficha</li>
+      <li class="consulta">Consultas</li>
+    </ul>
+  </nav>
+
+  <div class="img-background">
+    <img src="./FronEnd/imgs/sesmt.webp" alt="">
+  </div>
+
+  <div class="container-busca">
+
+    <label for="buscar-cpf">Buscar Consultas:</label>
+    <input type="number" id="buscar-cpf" title="CPF do usuário" aria-label="CFP do usuário" placeholder="Digite o CPF..." />
+
+    <!-- <button type="button" id="buscar-usuario">Buscar</button> -->
+    <button type="button" id="buscar-usuario">
+      <span class="pular">Buscar</span>
+    </button>
+    <button type="button" id="limpar-lista">Limpar</button>
+
+  </div>
+
+  <ul id="resultado"></ul>
+  <ul id="alerta"></ul>
+
+  <div class="container-geral">
+
+    <header>
+      <h1>Ficha Cadastral</h1>
+      <p>FORM N° GRO-GS-FM-0016/2016</p>
+      <h3>SESMT - SERVIÇO ESPECIALIZADO EM MEDICINA E SEGURANÇA DO TRABALHO</h3>
+    </header>
+
+    <h2>Tipo de Exame</h2>
+    <div class="tipo-exame">
+      <div class="container-admissional">
+        <label for="admissional">Admissional</label>
+        <strong>Sim</strong>
+        <input type="radio" id="admissional" name="admissional" title="Admissional" aria-label="Admissional" value="Sim">
+        <strong>Não</strong>
+        <input type="radio" id="admissional" name="admissional" title="Admissional" aria-label="Admissional" value="Não">
+      </div>
+
+      <div class="container-periodico">
+        <label for="periodico">Periódico</label>
+        <strong>Sim</strong>
+        <input type="radio" id="periodico" name="periodico" title="Periodico" aria-label="Periodico" value="Sim">
+        <strong>Não</strong>
+        <input type="radio" id="periodico" name="periodico" title="Periodico" aria-label="Periodico" value="Não">
+      </div>
+
+      <div class="conatainer-retorno-trabalho">
+        <label for="retorno-trabalho">Retorno ao Trabalho</label>
+        <strong>Sim</strong>
+        <input type="radio" id="retorno-trabalho" name="retornoTrabalho" title="Retorno-Trabalho" aria-label="Retorno-Trabalho" value="Sim">
+        <strong>Não</strong>
+        <input type="radio" id="retorno-trabalho" name="retornoTrabalho" title="Retorno-Trabalho" aria-label="Retorno-Trabalho" value="Não">
+      </div>
+
+      <div class="container-mudanca-funcao">
+        <label for="mudanca-funcao">Mudança de Função</label>
+        <strong>Sim</strong>
+        <input type="radio" id="mudanca-funcao" name="mudancaFuncao" title="Mudanca-Funcao" aria-label="Mudanca-Funcao" value="Sim">
+        <strong>Não</strong>
+        <input type="radio" id="mudanca-funcao" name="mudancaFuncao" title="Mudanca-Funcao" aria-label="Mudanca-Funcao" value="Não">
+      </div>
+
+    </div>
+
+    <h2>Identificação do Colaborador</h2>
+    <div class="identificacao-colaborador">
+      <label class="label-top" for="colaborador">Nome Completo:</label>
+      <input type="text" id="nome" title="Colaborador" aria-label="Colaborador" placeholder="Digite o nome...">
+
+      <label for="funcao">Função:</label>
+      <input type="text" id="funcao" title="Funcao" aria-label="Funcao">
+
+      <div class="dados-colaborador">
+        <label for="cpf">CPF:</label>
+        <input type="texte" id="cpf" title="CPF" aria-label="CPF" placeholder="000.000.000-00">
+
+        <label for="matricula">Matrícula:</label>
+        <input type="text" id="matricula" title="Matricula" aria-label="Matricula" placeholder="000000">
+
+        <label for="funcao">Telefone:</label>
+        <input type="tel" id="telefone" title="Telefone" aria-label="Telefone" placeholder="(99) 9 9999-9999">
+      </div>
+
+      <label for="sexo">Sexo:</label>
+      <select class="opcoes" id="sexo" name="sexo">
+        <option value="0"></option>
+        <option value="Masculino">Masculino</option>
+        <option value="Feminino">Feminino</option>
+        <option value="Trans">Trans</option>
+      </select>
+
+      <label for="atendimento">Data Atendimento:</label>
+      <input type="date" name="dataAtendimento" id="atendimento" title="Data Atendimento" placeholder="dd/mm/aaaa">
+
+    </div>
+
+    <div class="deficiencia">
+      <p>Possui Algum Tipo de Deficiência?</p>
+      <div class="df-sim">
+        <label for="deficiencia-sim"><strong>Sim:</strong></label>
+        <input type="radio" name="deficiencia" id="deficiencia-sim" value="sim">
+      </div>
+      <div class="df-nao">
+        <label for="deficiencia-nao"><strong>Não:</strong></label>
+        <input type="radio" name="deficiencia" id="deficiencia-nao" value="nao">
+      </div>
+
+      <label for="tipo-deficiencia">Tipo de Deficiência:</label>
+      <select class="tipo-deficiencia" id="tipo-deficiencia" name="tipo-deficiencia">
+        <option value="Não possui"></option>
+        <option value="Visual">Visual</option>
+        <option value="Auditiva">Auditiva</option>
+        <option value="Intelectual">Intelectual</option>
+        <option value="Psicossocial">Psicossocial</option>
+        <option value="Mental">Mental</option>
+        <option value="Multipla">Multipla</option>
+      </select>
+    </div>
+
+    <h2>Histórico Ocupacional</h2>
+    <div class="historico-ocupacional">
+      <p>Acidente de Trabalho:</p>
+      <div class="ac-tra">
+        <label class="sim" for="acidente-sim">Sim:</label>
+        <input type="radio" name="acidenteTrabalho" id="acidente-sim" value="Sim">
+        <label for="acidente-nao">Não:</label>
+        <input type="radio" name="acidenteTrabalho" id="acidente-nao" value="Não">
+      </div>
+
+      <p>Doença Ocupacional:</p>
+      <div class="do-oc">
+        <label class="sim" for="doenca-sim">Sim:</label>
+        <input type="radio" name="doencaOcupacional" id="doenca-sim" value="Sim">
+        <label for="doenca-nao">Não:</label>
+        <input type="radio" name="doencaOcupacional" id="doenca-nao" value="Não">
+      </div>
+
+      <p>Afastamento INSS:</p>
+      <div class="afa-in">
+        <label class="sim" for="afastamento-sim">Sim:</label>
+        <input type="radio" name="afastamentoInss" id="sim" title="Sim" value="Sim">
+        <label for="afastamento-nao">Não:</label>
+        <input type="radio" name="afastamentoInss" id="nao" title="Nao" value="Não">
+      </div>
+
+    </div>
+    <div class="btn-cadastro">
+      <button class="cadastrar-usuarios" type="submit" onclick="cadastrar()"><span class="pular">Cadastrar</span></button>
+    </div>
+  </div>
+
+</body>
+
+</html>

@@ -174,7 +174,7 @@ function buscarUsuarios() {
 
   document.getElementById('alerta').innerText = ''; //LIMPA O CATCH ANTES DO FATCH
 
-  fetch(`http://localhost:3000/usuarios/${buscarCpf}`)
+  fetch(`https://server-71yi.onrender.com/usuarios/${buscarCpf}`)
     .then((response) => {
       if (!response.ok) {
         throw new Error('Usuário não encontrado');

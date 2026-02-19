@@ -98,7 +98,7 @@ function cadastrar(event) {
   }
 
   // Envia uma requisição HTTP para o backend
-  fetch('http://localhost:3000/usuarios', {
+  fetch('https://server-71yi.onrender.com/usuarios', {
     // Define o método da requisição como POST (enviar dados)
     method: 'POST',
 

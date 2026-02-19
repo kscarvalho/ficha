@@ -13,25 +13,25 @@
 
   <nav class="nav-container">
     <ul class="ul-container">
-      <li class="cadastro">Ficha</li>
       <li class="consulta">Consultas</li>
     </ul>
   </nav>
 
-  <div class="img-background">
+  <!-- <div class="img-background">
     <img src="./FronEnd/imgs/sesmt.webp" alt="">
-  </div>
+  </div> -->
 
   <div class="container-busca">
 
     <label for="buscar-cpf">Buscar Consultas:</label>
     <input type="number" id="buscar-cpf" title="CPF do usuário" aria-label="CFP do usuário" placeholder="Digite o CPF..." />
-
-    <!-- <button type="button" id="buscar-usuario">Buscar</button> -->
-    <button type="button" id="buscar-usuario">
-      <span class="pular">Buscar</span>
-    </button>
-    <button type="button" id="limpar-lista">Limpar</button>
+    <div class="busca-botoes">
+      <!-- <button type="button" id="buscar-usuario">Buscar</button> -->
+      <button type="button" id="buscar-usuario">
+        <span class="pular">Buscar</span>
+      </button>
+      <button type="button" id="limpar-lista">Limpar</button>
+    </div>
 
   </div>
 
@@ -84,20 +84,20 @@
 
     <h2>Identificação do Colaborador</h2>
     <div class="identificacao-colaborador">
-      <label class="label-top" for="colaborador">Nome Completo:</label>
-      <input type="text" id="nome" title="Colaborador" aria-label="Colaborador" placeholder="Digite o nome...">
+      <label class="label-top" for="nome">Nome Completo:</label>
+      <input type="text" id="nome" title="nome" aria-label="nome" placeholder="Digite o nome...">
 
       <label for="funcao">Função:</label>
       <input type="text" id="funcao" title="Funcao" aria-label="Funcao">
 
       <div class="dados-colaborador">
         <label for="cpf">CPF:</label>
-        <input type="texte" id="cpf" title="CPF" aria-label="CPF" placeholder="000.000.000-00">
+        <input type="text" id="cpf" title="CPF" aria-label="CPF" placeholder="000.000.000-00">
 
         <label for="matricula">Matrícula:</label>
         <input type="text" id="matricula" title="Matricula" aria-label="Matricula" placeholder="000000">
 
-        <label for="funcao">Telefone:</label>
+        <label for="telefone">Telefone:</label>
         <input type="tel" id="telefone" title="Telefone" aria-label="Telefone" placeholder="(99) 9 9999-9999">
       </div>
 
@@ -107,6 +107,7 @@
         <option value="Masculino">Masculino</option>
         <option value="Feminino">Feminino</option>
         <option value="Trans">Trans</option>
+        <option value="Não informou">Não informou</option>
       </select>
 
       <label for="atendimento">Data Atendimento:</label>
@@ -118,23 +119,25 @@
       <p>Possui Algum Tipo de Deficiência?</p>
       <div class="df-sim">
         <label for="deficiencia-sim"><strong>Sim:</strong></label>
-        <input type="radio" name="deficiencia" id="deficiencia-sim" value="sim">
+        <input type="radio" name="deficiencia" id="deficiencia-sim" value="Sim">
       </div>
       <div class="df-nao">
         <label for="deficiencia-nao"><strong>Não:</strong></label>
-        <input type="radio" name="deficiencia" id="deficiencia-nao" value="nao">
+        <input type="radio" name="deficiencia" id="deficiencia-nao" value="Não">
       </div>
 
-      <label for="tipo-deficiencia">Tipo de Deficiência:</label>
-      <select class="tipo-deficiencia" id="tipo-deficiencia" name="tipo-deficiencia">
-        <option value="Não possui"></option>
-        <option value="Visual">Visual</option>
-        <option value="Auditiva">Auditiva</option>
-        <option value="Intelectual">Intelectual</option>
-        <option value="Psicossocial">Psicossocial</option>
-        <option value="Mental">Mental</option>
-        <option value="Multipla">Multipla</option>
-      </select>
+      <div class="container-tipo-deficiencia">
+        <label for="tipo-deficiencia">Tipo de Deficiência:</label>
+        <select class="tipo-deficiencia" id="tipo-deficiencia" name="tipo-deficiencia">
+          <option value="Não possui"></option>
+          <option value="Visual">Visual</option>
+          <option value="Auditiva">Auditiva</option>
+          <option value="Intelectual">Intelectual</option>
+          <option value="Psicossocial">Psicossocial</option>
+          <option value="Mental">Mental</option>
+          <option value="Multipla">Multipla</option>
+        </select>
+      </div>
     </div>
 
     <h2>Histórico Ocupacional</h2>
@@ -162,10 +165,185 @@
         <label for="afastamento-nao">Não:</label>
         <input type="radio" name="afastamentoInss" id="nao" title="Nao" value="Não">
       </div>
+    </div>
+
+    <h2>Questionário</h2>
+    <div class="container-questionario">
+
+      <div class="questionario-tratamento">
+        <label for="tratamentoMedico">No momento está em tratamento médico?</label>
+        <select class="tratamentoMedico" id="tratamentoMedico" name="tratamentoMedico">
+          <option value="Não">Não</option>
+          <option value="Sim">Sim</option>
+          <option value="Não sabe">Não Sabe</option>
+        </select>
+      </div>
+
+      <div class="questionario-medicamento">
+        <label for="medicamentoContinuo">Faz uso de alguma medicação continua?</label>
+        <select name="medicamentoContinuo" id="medicamentoContinuo">
+          <option value="Não">Não</option>
+          <option value="Sim">Sim</option>
+          <option value="Não sabe">Não Sabe</option>
+        </select>
+      </div>
+
+      <div class="alguma-doenca">
+        <label for="algumaDoenca">Tem ou teve alguma doença?</label>
+        <select name="algumaDoenca" id="algumaDoenca">
+          <option value="Não">Não</option>
+          <option value="Sim">Sim</option>
+          <option value="Não sabe">Não Sabe</option>
+        </select>
+      </div>
+
+      <div class="doenca-coracao">
+        <label for="doencaCoracao">Sofre alguma doença do coração?</label>
+        <select name="doencaCoracao" id="doencaCoracao">
+          <option value="Não">Não</option>
+          <option value="sim">Sim</option>
+          <option value="Não sabe">Não Sabe</option>
+        </select>
+      </div>
+
+      <div class="falta-ar">
+        <label for="faltaAr">Sofre falta de ar com frequência?</label>
+        <select name="faltaAr" id="faltaAr">
+          <option value="Não">Não</option>
+          <option value="Sim">Sim</option>
+          <option value="Não sabe">Não Sabe</option>
+        </select>
+      </div>
+
+      <div class="pernas-inchadas">
+        <label for="pernasInchadas">Constuma ter os pés ou pernas inchada?</label>
+        <select name="pernasInchadas" id="pernasInchadas">
+          <option value="Não">Não</option>
+          <option value="Sim">Sim</option>
+          <option value="Não sabe">Não Sabe</option>
+        </select>
+      </div>
+
+      <div class="alergico">
+        <label for="alergico">Tem algum tipo de alergia?</label>
+        <select name="alergico" id="alergico">
+          <option value="Não">Não</option>
+          <option value="Sim">Sim</option>
+          <option value="Não sabe">Não Sabe</option>
+        </select>
+      </div>
+
+      <div class="diabetico">
+        <label for="diabetico">Você ou alguém da família diabético?</label>
+        <select name="diabetico" id="diabetico">
+          <option value="Não">Não</option>
+          <option value="Sim">Sim</option>
+          <option value="Não sabe">Não Sabe</option>
+        </select>
+      </div>
+
+      <div class="transfusao-sangue">
+        <label for="transfusaoSangue">Alguma vez precisou de transfusão sanguinea?</label>
+        <select name="transfusaoSangue" id="transfusaoSangue">
+          <option value="Não">Não</option>
+          <option value="Sim">Sim</option>
+          <option value="Não sabe">Não Sabe</option>
+        </select>
+      </div>
+
+      <div class="cirurgia">
+        <label for="cirurgia">Você já foi submetido a algum procedimento cirúrgico?</label>
+        <select name="cirurgia" id="cirurgia">
+          <option value="Não">Não</option>
+          <option value="Sim">Sim</option>
+          <option value="Não sabe">Não Sabe</option>
+        </select>
+      </div>
+
+      <div class="fratura">
+        <label for="fratura">Já teve fratura (ruptura de osso)?</label>
+        <select name="fratura" id="fratura">
+          <option value="Não">Não</option>
+          <option value="Sim">Sim</option>
+          <option value="Não sabe">Não Sabe</option>
+        </select>
+      </div>
+
+      <div class="atividade-fisica">
+        <label for="atividadeFisica">Pratica atividade física?</label>
+        <select name="atividadeFisica" id="atividadeFisica">
+          <option value="Não">Não</option>
+          <option value="Sim">Sim</option>
+          <option value="Não sabe">Não Sabe</option>
+        </select>
+      </div>
+
+      <div class="fuma">
+        <label for="fuma">Você fuma?</label>
+        <select name="fuma" id="fuma">
+          <option value="Não">Não</option>
+          <option value="Sim">Sim</option>
+          <option value="Não sabe">Não Sabe</option>
+        </select>
+      </div>
+
+      <div class="bebida">
+        <label for="bebida">Consome bebida alcóolica?</label>
+        <select name="bebida" id="bebida">
+          <option value="Não">Não</option>
+          <option value="Sim">Sim</option>
+          <option value="Não sabe">Não Sabe</option>
+        </select>
+      </div>
+
+      <div class="drogas">
+        <label for="drogas">Você já comsumiu ou fez uso de drogas?</label>
+        <select name="drogas" id="drogas">
+          <option value="Não">Não</option>
+          <option value="Sim">Sim</option>
+          <option value="Não sabe">Não Sabe</option>
+        </select>
+      </div>
+
+      <div class="mental">
+        <label for="transtornoMental">Tem ou teve transtorno mental?</label>
+        <select name="transtornoMental" id="transtornoMental">
+          <option value="Não">Não</option>
+          <option value="Sim">Sim</option>
+          <option value="Não sabe">Não Sabe</option>
+        </select>
+      </div>
+
+      <div class="psiquiatrico">
+        <label for="psiquiatrico">Possui algum antecedente psiquiátrico?</label>
+        <select name="psiquiatrico" id="psiquiatrico">
+          <option value="Não">Não</option>
+          <option value="Sim">Sim</option>
+          <option value="Não sabe">Não Sabe</option>
+        </select>
+      </div>
 
     </div>
+
+    <h2>Anaminese Ocupacional e Exame Físico</h2>
+    <div>
+      <label for="anotacao"></label>
+      <textarea name="anotacao" id="anotacao" title="Anotação do exame" placeholder="Descreva observações e histórico..." rows="5"></textarea>
+
+    </div>
+
+    <div class="conclusao">
+      <label for="conclusao">Conclusão?</label>
+      <select name="conclusao" id="conclusao" title="Conclusão" aria-label="Conclusão">
+        <option value="Inapto">Inapto</option>
+        <option value="Apto">Apto</option>
+      </select>
+    </div>
+
     <div class="btn-cadastro">
-      <button class="cadastrar-usuarios" type="submit" onclick="cadastrar()"><span class="pular">Cadastrar</span></button>
+      <button class="cadastrar-usuarios" onclick="cadastrar(event)">
+        <span class="pular">Cadastrar</span>
+      </button>
     </div>
   </div>
 

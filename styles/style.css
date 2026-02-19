@@ -11,7 +11,6 @@ html body {
 
 .nav-container {
   display: flex;
-  justify-content: flex-end;
   width: 100%;
   height: 50px;
   background-color: #F9F8F6;
@@ -25,8 +24,6 @@ html body {
     justify-content: center;
   }
 }
-
-
 
 .ul-container {
   display: flex;
@@ -54,7 +51,7 @@ html body {
   }
 }
 
-li {
+.nav-container li {
   display: flex;
   font-size: 1rem;
   list-style-type: none;
@@ -62,6 +59,7 @@ li {
   cursor: pointer;
   padding: 5px;
   width: 120px;
+  margin-left: 83px;
   height: 35px;
   border-radius: 5px;
   color: #fff;
@@ -78,9 +76,15 @@ li:hover {
   opacity: 1;
 }
 
+@media(max-width: 376px) {
+    .nav-container li {
+        margin-left: 0;
+    }
+}
+
 
 .container-geral {
-  display: none;
+  display: block;
   margin: 10px;
   min-width: 200px;
   max-width: 1200px;
@@ -93,6 +97,11 @@ li:hover {
   font-family: Arial, Helvetica, sans-serif;
   border-radius: 5px;
 }
+
+.container-geral.none{
+  display: none;
+}
+
 
 @media(max-width: 1236px) {
   .container-geral {
@@ -225,7 +234,7 @@ h3 {
 
 
 .tipo-exame label{
-  font-size: 14px;
+  font-size: 15px;
   color: #1E201E;
 
 }
@@ -267,7 +276,7 @@ h2 {
 }
 
 #atendimento {
-  width: 200px;
+  width: 210px;
 }
 
 .dados-colaborador {
@@ -324,8 +333,13 @@ input:focus {
   margin-bottom: 15px;
 }
 
+.container-tipo-deficiencia{
+  display: none;
+  flex-direction: column;
+}
+
 .tipo-deficiencia, .opcoes {
-  max-width: 200px;
+  max-width: 210px;
   height: 35px;
   margin-bottom: 20px;
   border-radius: 5px;
@@ -423,6 +437,12 @@ input[type="number"]::-webkit-outer-spin-button {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.busca-botoes {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .container-busca.active {
   display: Flex;
   margin: 0 auto;
@@ -518,7 +538,7 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 .historico-ocupacional {
-  border: 1px solid #A8BBA3;
+  border: 1px solid #cbcbcb;
   padding: 5px;
 }
 
@@ -595,7 +615,7 @@ option {
 
 
 #limpar-lista {
-    display: flex;
+  display: flex;
   font-size: 1rem;
   padding: 5px;
   width: 120px;
@@ -610,7 +630,108 @@ option {
   border: none;
 }
 
+.container-questionario {
+  border: solid 0.5px #cbcbcb;
+  padding: 5px;
+}
+
+option {
+  font-size: 1rem;
+}
+
+@media(max-width: 376px) {
+  option {
+    font-size: .7rem;
+  }
+}
+
+.container-questionario div{
+  border-bottom: solid 0.5px #cbcbcb;
+}
+
+.container-questionario label {
+  display: flex;
+  font-weight: 600;
+  font-size: 1rem;
+  align-items: center;
+}
+
+@media(max-width: 376px) {
+  .container-questionario strong {
+    font-size: .7rem;
+  }
+}
+
+.container-questionario select {
+  height: 30px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 1rem;
+  border: solid 0.4px #CBCBCB;
+}
+
+@media(max-width: 376px) {
+  .container-questionario select {
+    font-size: .9rem;
+  }
+}
+
+.questionario-tratamento, 
+.questionario-medicamento, 
+.alguma-doenca,
+.doenca-coracao,
+.falta-ar,
+.pernas-inchadas,
+.alergico, 
+.diabetico,
+.transfusao-sangue,
+.cirurgia,
+.fratura,
+.atividade-fisica,
+.fuma,
+.bebida,
+.drogas,
+.mental,
+.psiquiatrico {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+}
+
+#anotacao {
+  font-size: 1rem;
+  font-family: Arial, Helvetica, sans-serif;
+  width: 100%;
+  height: 200px;
+  padding: 10px;
+  border: solid 0.5px #CBCBCB;
+}
+
+.conclusao{
+  display: flex;
+  justify-content: space-between;
+  border: solid 0.5px #CBCBCB;
+  padding: 5px;
+}
 
 
+.conclusao select{
+  font-size: 1rem;
+  height: 30px;
+  cursor: pointer;
+  border-radius: 5px;
+  border: solid 0.4px #CBCBCB;
+}
 
+.conclusao label {
+  display: flex;
+  font-size: 1.2rem;
+  font-weight: 600;
+  align-items: center;
+}
 
+@media(max-width: 376px) {
+  .conclusao label {
+    font-size: 1rem;
+  }
+}

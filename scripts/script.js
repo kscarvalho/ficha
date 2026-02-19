@@ -9,26 +9,26 @@ function formatarData(dataISO) {
   return new Date(dataISO).toLocaleDateString('pt-BR'); // Formata para dd/mm/aaaa
 }
 
-function ativarFichaCadastro() {
-  if (!containerGeral.classList.contains('active')) {
-    containerGeral.classList.add('active');
-  } else {
-    containerGeral.classList.remove('active');
+// ADICIONAR E REMOVER AREA CONSULTAS E FICHA DE CADASTRO
+botaoConsulta.addEventListener('click', function () {
+  `${containerBusca.classList.toggle('active')}` &&
+    `${containerGeral.classList.toggle('none')}`;
+});
+
+// ATIVAR AREA DE TIPO DEFICIENCIA
+const tipoDeficiencia = document.querySelector('.container-tipo-deficiencia');
+const deficienciaSim = document.getElementById('deficiencia-sim');
+
+function ativarTipoDeficiencia() {
+  if (deficienciaSim.checked) {
+    tipoDeficiencia.style.display = 'flex';
   }
 }
 
-function ativarConsulta() {
-  if (!containerBusca.classList.contains('active')) {
-    containerBusca.classList.add('active');
-  } else {
-    containerBusca.classList.remove('active');
-  }
-}
+deficienciaSim.addEventListener('change', ativarTipoDeficiencia);
 
-botaoCadastro.addEventListener('click', ativarFichaCadastro);
-botaoConsulta.addEventListener('click', ativarConsulta);
-
-function cadastrar() {
+function cadastrar(event) {
+  event.preventDefault();
   // Captura o valor digitado no input com id
   const nome = document.getElementById('nome').value;
   const funcao = document.getElementById('funcao').value;
@@ -38,6 +38,27 @@ function cadastrar() {
   const sexo = document.getElementById('sexo').value;
   const dataAtendimento = document.getElementById('atendimento').value;
   const tipoDeficiencia = document.getElementById('tipo-deficiencia').value;
+
+  const tratamentoMedico = document.getElementById('tratamentoMedico').value;
+  const medicamentoContinuo = document.getElementById(
+    'medicamentoContinuo',
+  ).value;
+  const algumaDoenca = document.getElementById('algumaDoenca').value;
+  const doencaCoracao = document.getElementById('doencaCoracao').value;
+  const faltaAr = document.getElementById('faltaAr').value;
+  const pernasInchadas = document.getElementById('pernasInchadas').value;
+  const alergico = document.getElementById('alergico').value;
+  const diabetico = document.getElementById('diabetico').value;
+  const transfusaoSangue = document.getElementById('transfusaoSangue').value;
+  const cirugia = document.getElementById('cirurgia').value;
+  const fratura = document.getElementById('fratura').value;
+  const atividadeFisica = document.getElementById('atividadeFisica').value;
+  const fuma = document.getElementById('fuma').value;
+  const bebida = document.getElementById('bebida').value;
+  const drogas = document.getElementById('drogas').value;
+  const transtornoMental = document.getElementById('transtornoMental').value;
+  const anotacao = document.getElementById('anotacao').value;
+  const conclusao = document.getElementById('conclusao').value;
 
   const deficiencia = document.querySelector(
     'input[name="deficiencia"]:checked',
@@ -105,6 +126,24 @@ function cadastrar() {
       periodico: periodico,
       retornoTrabalho: retornoTrabalho,
       mudancaFuncao: mudancaFuncao,
+      tratamentoMedico: tratamentoMedico,
+      medicamentoContinuo: medicamentoContinuo,
+      algumaDoenca: algumaDoenca,
+      doencaCoracao: doencaCoracao,
+      faltaAr: faltaAr,
+      pernasInchadas: pernasInchadas,
+      alergico: alergico,
+      diabetico: diabetico,
+      transfusaoSangue: transfusaoSangue,
+      cirugia: cirugia,
+      fratura: fratura,
+      atividadeFisica: atividadeFisica,
+      fuma: fuma,
+      bebida: bebida,
+      drogas: drogas,
+      transtornoMental: transtornoMental,
+      anotacao: anotacao,
+      conclusao: conclusao,
     }),
   })
     // Converte a resposta do servidor para JSON
@@ -125,6 +164,7 @@ function cadastrar() {
 
 // BUSCAR OS DADOS DO ARQUIVO JSON
 const buscarUsuario = document.getElementById('buscar-usuario');
+
 function buscarUsuarios() {
   const buscarCpf = document.getElementById('buscar-cpf').value;
   if (!buscarCpf) {
@@ -165,6 +205,28 @@ function buscarUsuarios() {
         <p class="linhas" ><strong>Acidente de Trabalho:</strong> ${usuario.acidenteTrabalho}</p>
         <p class="linhas" ><strong>Doença Ocupacional:</strong> ${usuario.doencaOcupacional}</p>
         <p class="linhas" ><strong>Afastamento Pelo INSS:</strong> ${usuario.afastamentoInss}</p>
+
+        <p class="linhas" ><strong>No momento está em tratamento médico:</strong> ${usuario.tratamentoMedico}</p>
+        <p class="linhas" ><strong>Faz uso de alguma medicação continua:</strong> ${usuario.medicamentoContinuo}</p>
+        <p class="linhas" ><strong>Teve ou tem alguma doença:</strong> ${usuario.algumaDoenca}</p>
+        <p class="linhas" ><strong>Sofre alguma doença do coração:</strong> ${usuario.doencaCoracao}</p>
+        <p class="linhas" ><strong>Sente falta de ar com frequència:</strong> ${usuario.faltaAr}</p>
+        <p class="linhas" ><strong>Costuma te os pés ou pernas inchadas:</strong> ${usuario.pernasInchadas}</p>
+        <p class="linhas" ><strong>Você é alérgico:</strong> ${usuario.alergico}</p>
+        <p class="linhas" ><strong>Você é diabético:</strong> ${usuario.diabetico}</p>
+        <p class="linhas" ><strong>Alguma vez precisou de transfusão de Sangue:</strong> ${usuario.transfusaoSangue}</p>
+        <p class="linhas" ><strong>Você já foi submetido a algum procedimento cirúrgico:</strong> ${usuario.cirugia}</p>
+        <p class="linhas" ><strong>Já teve fratura:</strong> ${usuario.fratura}</p>
+          <p class="linhas" ><strong>Pratica atividade fisica:</strong> ${usuario.atividadeFisica}</p>
+            <p class="linhas" ><strong>Você fuma:</strong> ${usuario.fuma}</p>
+              <p class="linhas" ><strong>Consome bebida alcóolica:</strong> ${usuario.bebida}</p>
+                <p class="linhas" ><strong>Você já comsumiu ou faz uso de drogas:</strong> ${usuario.drogas}</p>
+                  <p class="linhas" ><strong>Tem ou teve transtorno mental:</strong> ${usuario.transtornoMental}</p>
+                  <p class="linhas" ><strong>Anotações:</strong> ${usuario.anotacao}</p>
+                  <p class="linhas" ><strong>Conclusão:</strong> ${usuario.conclusao}</p>
+
+
+
         <p class="linhas" ><strong>Data do Atendimento:</strong> ${formatarData(usuario.dataAtendimento)}</p>
       </div>
       `;
@@ -185,7 +247,6 @@ function limparInputs() {
 buscarUsuario.addEventListener('click', limparInputs);
 
 const divLista = document.getElementById('div-lista');
-console.log(divLista);
 const limparLista = document.getElementById('limpar-lista');
 
 function limparDados() {

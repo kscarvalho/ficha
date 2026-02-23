@@ -48,8 +48,8 @@ async function cadastrar(event) {
 
   const dados = {
     nome: document.getElementById('nome').value,
-    funcao: document.getElementById('funcao').value,
     cpf: document.getElementById('cpf').value,
+    funcao: document.getElementById('funcao').value,
     matricula: document.getElementById('matricula').value,
     telefone: document.getElementById('telefone').value,
     sexo: document.getElementById('sexo').value,
@@ -155,6 +155,7 @@ async function buscarUsuarios() {
           <p><strong>Nome:</strong> ${usuario.nome}</p>
           <p><strong>CPF:</strong> ${usuario.cpf}</p>
           <p><strong>Função:</strong> ${usuario.funcao}</p>
+          <p><strong>Matricula:</strong> ${usuario.matricula}</p>
           <p><strong>Data do Atendimento:</strong> ${formatarData(
             usuario.dataAtendimento,
           )}</p>

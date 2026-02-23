@@ -156,6 +156,30 @@ async function buscarUsuarios() {
           <p><strong>CPF:</strong> ${usuario.cpf}</p>
           <p><strong>Função:</strong> ${usuario.funcao}</p>
           <p><strong>Matricula:</strong> ${usuario.matricula}</p>
+          <p><strong>Telefone:</strong> ${usuario.telefone}</p>
+          <p><strong>Sexo:</strong> ${usuario.sexo}</p>
+          <p><strong>Data do atendimento:</strong> ${usuario.dataAtendimento}</p>
+          <p><strong>Tipo de deficiência:</strong> ${usuario.tipoDeficiencia}</p>
+          <p><strong>No momento está em tratamento médico?</strong> ${usuario.tratamentoMedico}</p>
+          <p><strong>Faz uso de alguma medicação continua?</strong> ${usuario.medicamentoContinuo}</p>
+          <p><strong>Teve ou tem alguma doença?</strong> ${usuario.algumaDoenca}</p>
+          <p><strong>Sofre de alguma doença do coração?</strong> ${usuario.doencaCoracao}</p>
+          <p><strong>Sente falta de ar com frenquência?</strong> ${usuario.faltaAr}</p>
+          <p><strong>Costume ter as pernas ou pés inchados?</strong> ${usuario.pernasInchadas}</p>
+          <p><strong>Tem algum tipo de alergia?</strong> ${usuario.alergico}</p>
+          <p><strong>Você é diabético?</strong> ${usuario.diabetico}</p>
+          <p><strong>Alguma vez precisou de transfusão sanguínea (recebeu sangue)?</strong> ${usuario.transfusaoSangue}</p>
+          <p><strong>Você já foi submetido a algum procedimento cirúrgico?</strong> ${usuario.cirurgia}</p>
+          <p><strong>Já teve fratura (ruptura de osso)?</strong> ${usuario.fratura}</p>
+          <p><strong>Pratica atividade física?</strong> ${usuario.atividadeFisica}</p>
+          <p><strong>Você fuma?</strong> ${usuario.fuma}</p>
+          <p><strong>Consome bebida alcóolica?</strong> ${usuario.bebida}</p>
+          <p><strong>Você já consumiu ou fez uso de drogas?</strong> ${usuario.drogas}</p>
+          <p><strong>Teve ou tem transtorno metal?</strong> ${usuario.transtornoMental}</p>
+          <p><strong>Observações:</strong> ${usuario.anotacao}</p>
+          <p><strong>Comclusão:</strong> ${usuario.conclusao}</p>
+
+
           <p><strong>Data do Atendimento:</strong> ${formatarData(
             usuario.dataAtendimento,
           )}</p>

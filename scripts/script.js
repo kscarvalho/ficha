@@ -64,7 +64,7 @@ async function cadastrar(event) {
     alergico: document.getElementById('alergico').value,
     diabetico: document.getElementById('diabetico').value,
     transfusaoSangue: document.getElementById('transfusaoSangue').value,
-    cirugia: document.getElementById('cirurgia').value,
+    cirurgia: document.getElementById('cirurgia').value,
     fratura: document.getElementById('fratura').value,
     atividadeFisica: document.getElementById('atividadeFisica').value,
     fuma: document.getElementById('fuma').value,

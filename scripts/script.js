@@ -94,8 +94,8 @@ async function cadastrar(event) {
 
     periodico: document.querySelector('input[name="periodico"]:checked')?.value,
 
-    retornoTrabalho: document.querySelector(
-      'input[name="retornoTrabalho"]:checked',
+    retornotrabalho: document.querySelector(
+      'input[name="retornotrabalho"]:checked',
     )?.value,
 
     mudancaFuncao: document.querySelector('input[name="mudancaFuncao"]:checked')
@@ -166,7 +166,7 @@ async function buscarUsuarios() {
 
             <p><strong>Admissional:</strong> ${usuario.admissional}</p>
             <p><strong>Periódico:</strong> ${usuario.periodico}</p>
-            <p><strong>Retorno ao trabalho:</strong> ${usuario.retornoTrabalho}</p>
+            <p><strong>Retorno ao trabalho:</strong> ${usuario.retornotrabalho}</p>
             <p><strong>Mudança de função:</strong> ${usuario.mudancaFuncao}</p>
             
             <p><strong>Nome:</strong> ${usuario.nome}</p>

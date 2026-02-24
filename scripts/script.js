@@ -73,22 +73,29 @@ async function cadastrar(event) {
     transtornoMental: document.getElementById('transtornoMental').value,
     anotacao: document.getElementById('anotacao').value,
     conclusao: document.getElementById('conclusao').value,
+
     deficiencia,
     acidenteTrabalho: document.querySelector(
       'input[name="acidenteTrabalho"]:checked',
     )?.value,
+
     doencaOcupacional: document.querySelector(
       'input[name="doencaOcupacional"]:checked',
     )?.value,
+
     afastamentoInss: document.querySelector(
       'input[name="afastamentoInss"]:checked',
     )?.value,
+
     admissional: document.querySelector('input[name="admissional"]:checked')
       ?.value,
+
     periodico: document.querySelector('input[name="periodico"]:checked')?.value,
+
     retornoTrabalho: document.querySelector(
       'input[name="retornoTrabalho"]:checked',
     )?.value,
+
     mudancaFuncao: document.querySelector('input[name="mudancaFuncao"]:checked')
       ?.value,
   };
@@ -150,39 +157,59 @@ async function buscarUsuarios() {
 
     usuarios.forEach((usuario, index) => {
       resultado.innerHTML += `
-        <div style="border:1px solid #000; padding:10px; margin:10px 0;">
+        <div class="resultado" style="border:1px solid #000; padding:10px; margin:10px 0;">
           <h3>Registro ${index + 1}</h3>
-          <p><strong>Nome:</strong> ${usuario.nome}</p>
-          <p><strong>CPF:</strong> ${usuario.cpf}</p>
-          <p><strong>Função:</strong> ${usuario.funcao}</p>
-          <p><strong>Matricula:</strong> ${usuario.matricula}</p>
-          <p><strong>Telefone:</strong> ${usuario.telefone}</p>
-          <p><strong>Sexo:</strong> ${usuario.sexo}</p>
-          <p><strong>Data do atendimento:</strong> ${usuario.dataAtendimento}</p>
-          <p><strong>Tipo de deficiência:</strong> ${usuario.tipoDeficiencia}</p>
-          <p><strong>No momento está em tratamento médico?</strong> ${usuario.tratamentoMedico}</p>
-          <p><strong>Faz uso de alguma medicação continua?</strong> ${usuario.medicamentoContinuo}</p>
-          <p><strong>Teve ou tem alguma doença?</strong> ${usuario.algumaDoenca}</p>
-          <p><strong>Sofre de alguma doença do coração?</strong> ${usuario.doencaCoracao}</p>
-          <p><strong>Sente falta de ar com frenquência?</strong> ${usuario.faltaAr}</p>
-          <p><strong>Costume ter as pernas ou pés inchados?</strong> ${usuario.pernasInchadas}</p>
-          <p><strong>Tem algum tipo de alergia?</strong> ${usuario.alergico}</p>
-          <p><strong>Você é diabético?</strong> ${usuario.diabetico}</p>
-          <p><strong>Alguma vez precisou de transfusão sanguínea (recebeu sangue)?</strong> ${usuario.transfusaoSangue}</p>
-          <p><strong>Você já foi submetido a algum procedimento cirúrgico?</strong> ${usuario.cirurgia}</p>
-          <p><strong>Já teve fratura (ruptura de osso)?</strong> ${usuario.fratura}</p>
-          <p><strong>Pratica atividade física?</strong> ${usuario.atividadeFisica}</p>
-          <p><strong>Você fuma?</strong> ${usuario.fuma}</p>
-          <p><strong>Consome bebida alcóolica?</strong> ${usuario.bebida}</p>
-          <p><strong>Você já consumiu ou fez uso de drogas?</strong> ${usuario.drogas}</p>
-          <p><strong>Teve ou tem transtorno metal?</strong> ${usuario.transtornoMental}</p>
-          <p><strong>Observações:</strong> ${usuario.anotacao}</p>
-          <p><strong>Comclusão:</strong> ${usuario.conclusao}</p>
+          <div class="linhas">
 
 
-          <p><strong>Data do Atendimento:</strong> ${formatarData(
-            usuario.dataAtendimento,
-          )}</p>
+            <p><strong>Admissional:</strong> ${usuario.admissional}</p>
+            <p><strong>Periódico:</strong> ${usuario.periodico}</p>
+            <p><strong>Retorno ao trabalho:</strong> ${usuario.retornoTrabalho}</p>
+            <p><strong>Mudança de função:</strong> ${usuario.mudancaFuncao}</p>
+            
+            <p><strong>Nome:</strong> ${usuario.nome}</p>
+            <p><strong>CPF:</strong> ${usuario.cpf}</p>
+            <p><strong>Função:</strong> ${usuario.funcao}</p>
+            <p><strong>Matricula:</strong> ${usuario.matricula}</p>
+            <p><strong>Telefone:</strong> ${usuario.telefone}</p>
+            <p><strong>Sexo:</strong> ${usuario.sexo}</p>
+
+            <p><strong>Data do atendimento:</strong> ${usuario.dataAtendimento}</p>
+
+            <p><strong>Possui alguma deficiência?</strong> ${usuario.deficiencia}</p>
+            <p><strong>Tipo de deficiência:</strong> ${usuario.tipoDeficiencia}</p>
+
+            <p><strong>Acidente de tralaho:</strong> ${usuario.acidenteTrabalho}</p>
+            <p><strong>Doença ocupacional:</strong> ${usuario.doencaOcupacional}</p>
+            <p><strong>Afastamento INSS:</strong> ${usuario.afastamentoInss}</p>
+
+
+
+            <p><strong>No momento está em tratamento médico?</strong> ${usuario.tratamentoMedico}</p>
+            <p><strong>Faz uso de alguma medicação continua?</strong> ${usuario.medicamentoContinuo}</p>
+            <p><strong>Teve ou tem alguma doença?</strong> ${usuario.algumaDoenca}</p>
+            <p><strong>Sofre de alguma doença do coração?</strong> ${usuario.doencaCoracao}</p>
+            <p><strong>Sente falta de ar com frenquência?</strong> ${usuario.faltaAr}</p>
+            <p><strong>Costume ter as pernas ou pés inchados?</strong> ${usuario.pernasInchadas}</p>
+            <p><strong>Tem algum tipo de alergia?</strong> ${usuario.alergico}</p>
+            <p><strong>Você é diabético?</strong> ${usuario.diabetico}</p>
+            <p><strong>Alguma vez precisou de transfusão sanguínea (recebeu sangue)?</strong> ${usuario.transfusaoSangue}</p>
+            <p><strong>Você já foi submetido a algum procedimento cirúrgico?</strong> ${usuario.cirurgia}</p>
+            <p><strong>Já teve fratura (ruptura de osso)?</strong> ${usuario.fratura}</p>
+            <p><strong>Pratica atividade física?</strong> ${usuario.atividadeFisica}</p>
+            <p><strong>Você fuma?</strong> ${usuario.fuma}</p>
+            <p><strong>Consome bebida alcóolica?</strong> ${usuario.bebida}</p>
+            <p><strong>Você já consumiu ou fez uso de drogas?</strong> ${usuario.drogas}</p>
+            <p><strong>Teve ou tem transtorno metal?</strong> ${usuario.transtornoMental}</p>
+            
+            <p><strong>Observações:</strong> ${usuario.anotacao}</p>
+            <p><strong>Comclusão:</strong> ${usuario.conclusao}</p>
+
+
+            <p><strong>Data do Atendimento:</strong> ${formatarData(
+              usuario.dataAtendimento,
+            )}</p>
+          </div>    
         </div>
       `;
     });

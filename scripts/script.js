@@ -167,7 +167,7 @@ async function buscarUsuarios() {
             <p><strong>Admissional:</strong> ${usuario.admissional}</p>
             <p><strong>Periódico:</strong> ${usuario.periodico}</p>
             <p><strong>Retorno ao trabalho:</strong> ${usuario.retornotrabalho}</p>
-            <p><strong>Mudança de função:</strong> ${usuario.mudancaFuncao}</p>
+            <p><strong>Mudança de função:</strong> ${usuario.mudancafuncao}</p>
             
             <p><strong>Nome:</strong> ${usuario.nome}</p>
             <p><strong>CPF:</strong> ${usuario.cpf}</p>
@@ -176,8 +176,6 @@ async function buscarUsuarios() {
             <p><strong>Telefone:</strong> ${usuario.telefone}</p>
             <p><strong>Sexo:</strong> ${usuario.sexo}</p>
 
-            <p><strong>Data do atendimento:</strong> ${usuario.dataAtendimento}</p>
-
             <p><strong>Possui alguma deficiência?</strong> ${usuario.deficiencia}</p>
             <p><strong>Tipo de deficiência:</strong> ${usuario.tipodeficiencia}</p>
 
@@ -185,9 +183,6 @@ async function buscarUsuarios() {
             <p><strong>Doença ocupacional:</strong> ${usuario.doencaocupacional}</p>
             <p><strong>Afastamento INSS:</strong> ${usuario.afastamentoinss}</p>
 
-
-
-            <p><strong>No momento está em tratamento médico?</strong> ${usuario.tratamentomedico}</p>
             <p><strong>Faz uso de alguma medicação continua?</strong> ${usuario.medicamentocontinuo}</p>
             <p><strong>Teve ou tem alguma doença?</strong> ${usuario.algumadoenca}</p>
             <p><strong>Sofre de alguma doença do coração?</strong> ${usuario.doencacoracao}</p>
@@ -208,7 +203,7 @@ async function buscarUsuarios() {
             <p><strong>Comclusão:</strong> ${usuario.conclusao}</p>
 
 
-            ${formatarData(usuario.dataatendimento)}</p>
+            <p><strong>Data da consulta:</strong> ${formatarData(usuario.dataatendimento)}</p>
           </div>    
         </div>
       `;

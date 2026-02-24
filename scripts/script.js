@@ -55,38 +55,38 @@ async function cadastrar(event) {
     sexo: document.getElementById('sexo').value,
     dataAtendimento: document.getElementById('atendimento').value,
 
-    tipoDeficiencia: document.getElementById('tipo-deficiencia').value,
+    tipodeficiencia: document.getElementById('tipo-deficiencia').value,
 
-    tratamentoMedico: document.getElementById('tratamentoMedico').value,
-    medicamentoContinuo: document.getElementById('medicamentoContinuo').value,
-    algumaDoenca: document.getElementById('algumaDoenca').value,
-    doencaCoracao: document.getElementById('doencaCoracao').value,
-    faltaAr: document.getElementById('faltaAr').value,
-    pernasInchadas: document.getElementById('pernasInchadas').value,
+    tratamentomedico: document.getElementById('tratamentomedico').value,
+    medicamentocontinuo: document.getElementById('medicamentocontinuo').value,
+    algumadoenca: document.getElementById('algumadoenca').value,
+    doencacoracao: document.getElementById('doencacoracao').value,
+    faltaar: document.getElementById('faltaar').value,
+    pernasinchadas: document.getElementById('pernasinchadas').value,
     alergico: document.getElementById('alergico').value,
     diabetico: document.getElementById('diabetico').value,
-    transfusaoSangue: document.getElementById('transfusaoSangue').value,
+    transfusaosangue: document.getElementById('transfusaosangue').value,
     cirurgia: document.getElementById('cirurgia').value,
     fratura: document.getElementById('fratura').value,
-    atividadeFisica: document.getElementById('atividadeFisica').value,
+    atividadefisica: document.getElementById('atividadefisica').value,
     fuma: document.getElementById('fuma').value,
     bebida: document.getElementById('bebida').value,
     drogas: document.getElementById('drogas').value,
-    transtornoMental: document.getElementById('transtornoMental').value,
+    transtornomental: document.getElementById('transtornomental').value,
     anotacao: document.getElementById('anotacao').value,
     conclusao: document.getElementById('conclusao').value,
 
     deficiencia,
-    acidenteTrabalho: document.querySelector(
-      'input[name="acidenteTrabalho"]:checked',
+    acidentetrabalho: document.querySelector(
+      'input[name="acidentetrabalho"]:checked',
     )?.value,
 
-    doencaOcupacional: document.querySelector(
-      'input[name="doencaOcupacional"]:checked',
+    doencaocupacional: document.querySelector(
+      'input[name="doencaocupacional"]:checked',
     )?.value,
 
-    afastamentoInss: document.querySelector(
-      'input[name="afastamentoInss"]:checked',
+    afastamentoinss: document.querySelector(
+      'input[name="afastamentoinss"]:checked',
     )?.value,
 
     admissional: document.querySelector('input[name="admissional"]:checked')
@@ -98,7 +98,7 @@ async function cadastrar(event) {
       'input[name="retornotrabalho"]:checked',
     )?.value,
 
-    mudancaFuncao: document.querySelector('input[name="mudancaFuncao"]:checked')
+    mudancafuncao: document.querySelector('input[name="mudancafuncao"]:checked')
       ?.value,
   };
 

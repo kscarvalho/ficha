@@ -54,7 +54,9 @@ async function cadastrar(event) {
     telefone: document.getElementById('telefone').value,
     sexo: document.getElementById('sexo').value,
     dataAtendimento: document.getElementById('atendimento').value,
+
     tipoDeficiencia: document.getElementById('tipo-deficiencia').value,
+
     tratamentoMedico: document.getElementById('tratamentoMedico').value,
     medicamentoContinuo: document.getElementById('medicamentoContinuo').value,
     algumaDoenca: document.getElementById('algumaDoenca').value,
@@ -206,9 +208,7 @@ async function buscarUsuarios() {
             <p><strong>Comclusão:</strong> ${usuario.conclusao}</p>
 
 
-            <p><strong>Data do Atendimento:</strong> ${formatarData(
-              usuario.dataAtendimento,
-            )}</p>
+            ${formatarData(usuario.dataAtendimento)}</p>
           </div>    
         </div>
       `;

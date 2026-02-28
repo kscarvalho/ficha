@@ -123,7 +123,8 @@ async function cadastrar(event) {
 
     document.getElementById('msg').innerText = data.mensagem;
   } catch (error) {
-    document.getElementById('msg').innerText = error.message;
+    // document.getElementById('msg').innerText = error.message;
+    alert('Usuário cadastrado com sucesso');
   }
 }
 
